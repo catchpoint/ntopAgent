@@ -30,4 +30,5 @@ This label corresponds to the current status of the issue.  Unlike the Type and 
 - **Canceled:** Issue was canceled or made invalid
 
 ## Build Delivery
-When new features or bug fixes are implemented, NTop will need to provide updated nProbe builds for Catchpoint on all supported platforms.  Currently the Catchpoint Endpoint Agent supports Windows and Mac.  When builds for Catchpoint are available, they can be uploaded to Releases in Github.  Catchpoint developers will download builds from here for further testing. 
+
+TBD

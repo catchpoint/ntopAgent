@@ -29,6 +29,20 @@ This label corresponds to the current status of the issue.  Unlike the Type and 
 - **Complete:** Issue has been tested and verified
 - **Canceled:** Issue was canceled or made invalid
 
-## Build Delivery
+## Build Delivery And Tracking
 
-TBD
+When new features or bug fixes are implemented, NTop will need to provide updated nProbe builds for Catchpoint on all supported platforms.  Currently the Catchpoint Endpoint Agent supports Windows and Mac.  When new features or fixes are made, we will need to test and verify on both platforms.  Because of this, builds provided should be in sync (i.e. off the same git branch/tag and build/sha number). The process for build delivery and tracking would be the following:
+
+1.  A bug or new feature request is reported to Git->Issues.  The issue report should follow the guidelines laid out above.
+2.  Developer takes the issue, implements a solution.
+    * Developer places the Git Issue in "Waiting Review"
+    * Developer uploads new build executable for all supported platforms (Windows/Mac) to Git Releases
+    * Each build name should have the following format for tracking purposes: ntop_major.minor.build.  The builds for each platform here should be identical.
+    * Uploading the build to Releases should also come with a set of release notes, which provides a numbered list of changes, referring to the Git issue number that the build addresses.
+3.  Tester will download the build and test the Issues that the build addresses.
+    * If Issue appears resolve, tester should move on to #4.
+    * If an Issue still occurs or is incomplete, the tester should place the Git Issue back to the "Open" status, and comment in the issue further what still needs to be done.  This should be clear and thorough enough for the developer to pick right back up.
+    * Developer should confirm that re-opened issue is in fact valid.  If the re-opened issue is valid, the developer should remove the previously uploaded build, and re-upload a new build when a new fix/implementation is complete.
+4.  If the build addresses all newly Open reported issues, the tester should mark all "Waiting Review" issues as "Complete", and close the issue out.
+
+
